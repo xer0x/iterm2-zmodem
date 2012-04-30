@@ -11,14 +11,14 @@ if [[ $FILE = "" ]]; then
 	# Send ZModem cancel
 	echo -e \\x18\\x18\\x18\\x18\\x18
 	echo "# Cancelled transfer       "
-	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm2.app" -m 'Cancelled.' -t "File transfer"
+	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm" -m 'Cancelled.' -t "File transfer"
 	echo
 else
 	echo $FILE
 	cd "${FILE}"
-	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm2.app" -m 'Transfer started...' -t "File transfer"
+	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm" -m 'Transfer started...' -t "File transfer"
 	/usr/local/bin/rz
-	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm2.app" -m 'Transfer finished.' -t "File transfer"
+	/usr/local/bin/growlnotify -a /Applications/iTerm.app -n "iTerm" -m 'Transfer finished.' -t "File transfer"
 	echo "# Transfer finished        "
 	echo
 fi
